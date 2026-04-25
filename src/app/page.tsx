@@ -412,7 +412,7 @@ export default function Home() {
           <SectionTitle className="mb-2">Habilidades</SectionTitle>
           <p className="text-sm font-medium text-[#b5a090] mb-4">Arraste e interaja com as habilidades.</p>
 
-          <Gravity gravity={{ x: 0, y: 1.2 }} style={{ height: 320, borderRadius: 16, background: '#f4dfd0', border: '1.5px solid #d4c4b5' }}>
+          <Gravity gravity={{ x: 0, y: 1.2 }} style={{ height: 320, borderRadius: 16, background: '#fdf6f0', border: '1.5px solid #d4c4b5' }}>
             {skills.map((s, i) => {
               const pos = skillPos(i)
               return (
