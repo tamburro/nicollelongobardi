@@ -1,20 +1,18 @@
 import type { Metadata } from 'next'
-import { Space_Grotesk, Noto_Sans } from 'next/font/google'
+import { Plus_Jakarta_Sans, Inter } from 'next/font/google'
 import './globals.css'
 
-// Roobert PRO substitute — Space Grotesk is the closest free geometric
-// alternative with similar proportions and OpenType feel
-const spaceGrotesk = Space_Grotesk({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-display',
+  weight: ['500', '600', '700'],
+  variable: '--font-jakarta',
   display: 'swap',
 })
 
-const notoSans = Noto_Sans({
+const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  variable: '--font-body',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-inter',
   display: 'swap',
 })
 
@@ -25,7 +23,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR" className={`${spaceGrotesk.variable} ${notoSans.variable}`}>
+    <html lang="pt-BR" className={`${jakarta.variable} ${inter.variable}`}>
       <body className="bg-white antialiased">
         {children}
       </body>
