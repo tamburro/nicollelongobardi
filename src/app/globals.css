@@ -1,37 +1,47 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Fonts */
-  --font-display: var(--font-jakarta), 'DM Sans', system-ui, sans-serif;
-  --font-body:    var(--font-inter), -apple-system, system-ui, sans-serif;
+  /* Fonts — Space Grotesk ≈ Roobert PRO, Noto Sans ≈ body */
+  --font-display: var(--font-display), 'DM Sans', system-ui, sans-serif;
+  --font-body:    var(--font-body), -apple-system, system-ui, sans-serif;
 
-  /* Design tokens — nova paleta */
-  --color-canvas:      #f4dfd0;   /* cream — canvas principal */
-  --color-cloud:       #ede0d4;   /* cream escuro — seções alternadas */
-  --color-white:       #ffffff;   /* branco — superfície de cards */
+  /* ── Miro-inspired design tokens ── */
 
-  --color-teal:        #0abfc7;   /* teal — accent decorativo principal */
-  --color-teal-deep:   #089aa2;   /* teal escuro — hover */
+  /* Canvas & surfaces */
+  --color-white:        #ffffff;
+  --color-near-black:   #1c1c1e;
 
-  --color-coral:       #e84e28;   /* coral — CTAs e ação */
-  --color-coral-deep:  #c43d1c;   /* coral escuro — hover botão */
+  /* Primary interactive */
+  --color-blue:         #5b76fe;
+  --color-blue-pressed: #2a41b6;
 
-  --color-ink:         #222222;   /* texto principal */
-  --color-ash:         #6a6a6a;   /* texto secundário */
-  --color-stone:       #b5a090;   /* texto terciário */
-  --color-hairline:    #d4c4b5;   /* bordas e divisores */
+  /* Secondary text */
+  --color-slate:        #555a6a;
+  --color-placeholder:  #a5a8b5;
 
-  --color-info:        #428bff;
+  /* Borders */
+  --color-border:       #c7cad5;
+  --color-ring:         #e0e2e8;
+
+  /* Pastel section accents */
+  --color-pastel-teal:   #c3faf5;
+  --color-pastel-coral:  #ffc6c6;
+  --color-pastel-rose:   #ffd8f4;
+  --color-pastel-orange: #ffe6cd;
+  --color-pastel-yellow: #fef3c7;
+
+  /* Success */
+  --color-success: #00b473;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-body);
-  color: var(--color-ink);
-  background: var(--color-canvas);
+  color: var(--color-near-black);
+  background: var(--color-white);
 }
 
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--color-hairline); border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: var(--color-ring); border-radius: 3px; }
