@@ -188,11 +188,17 @@ export default function Gravity({
       constraint: { stiffness: 0.2, render: { visible: false } },
     })
     Matter.Composite.add(engine.world, mc)
-    // Matter.js attaches wheel listeners that prevent page scroll — remove them
+    // Matter.js registers non-passive wheel listeners that call preventDefault,
+    // blocking page scroll. Fix: remove then re-add as passive so preventDefault
+    // is ignored by the browser and the page scrolls normally.
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const mAny = mouse as any
-    mouse.element.removeEventListener('mousewheel', mAny.mousewheel)
-    mouse.element.removeEventListener('DOMMouseScroll', mAny.mousewheel)
+    if (mAny.mousewheel) {
+      mouse.element.removeEventListener('mousewheel',    mAny.mousewheel)
+      mouse.element.removeEventListener('DOMMouseScroll', mAny.mousewheel)
+      mouse.element.addEventListener('mousewheel',    mAny.mousewheel, { passive: true })
+      mouse.element.addEventListener('DOMMouseScroll', mAny.mousewheel, { passive: true })
+    }
 
     /* flush pending bodies */
     pendingRef.current.forEach(({ el, opts }) => addPhysicsBody(el, opts, engine))
