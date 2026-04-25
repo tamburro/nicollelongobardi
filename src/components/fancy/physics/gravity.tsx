@@ -189,8 +189,10 @@ export default function Gravity({
     })
     Matter.Composite.add(engine.world, mc)
     // Matter.js attaches wheel listeners that prevent page scroll — remove them
-    mouse.element.removeEventListener('mousewheel', mouse.mousewheel as EventListener)
-    mouse.element.removeEventListener('DOMMouseScroll', mouse.mousewheel as EventListener)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const mAny = mouse as any
+    mouse.element.removeEventListener('mousewheel', mAny.mousewheel)
+    mouse.element.removeEventListener('DOMMouseScroll', mAny.mousewheel)
 
     /* flush pending bodies */
     pendingRef.current.forEach(({ el, opts }) => addPhysicsBody(el, opts, engine))
