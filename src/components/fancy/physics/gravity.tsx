@@ -181,13 +181,16 @@ export default function Gravity({
 
     wallsRef.current = makeWalls(engine, width, height)
 
-    /* mouse drag */
+    /* mouse drag — remove wheel listeners so page scroll is not blocked */
     const mouse = Matter.Mouse.create(container)
     const mc    = Matter.MouseConstraint.create(engine, {
       mouse,
       constraint: { stiffness: 0.2, render: { visible: false } },
     })
     Matter.Composite.add(engine.world, mc)
+    // Matter.js attaches wheel listeners that prevent page scroll — remove them
+    mouse.element.removeEventListener('mousewheel', mouse.mousewheel as EventListener)
+    mouse.element.removeEventListener('DOMMouseScroll', mouse.mousewheel as EventListener)
 
     /* flush pending bodies */
     pendingRef.current.forEach(({ el, opts }) => addPhysicsBody(el, opts, engine))

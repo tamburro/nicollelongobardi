@@ -405,7 +405,7 @@ export default function Home() {
 
         <Gravity
           gravity={{ x: 0, y: 1.2 }}
-          style={{ height: 520, width: '100%' }}
+          style={{ height: 340, width: '100%' }}
         >
           {skills.map((s, i) => {
             const pos = skillPos(i, skills.length)
