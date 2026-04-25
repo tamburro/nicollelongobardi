@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react'
 import Gravity, { MatterBody } from '@/components/fancy/physics/gravity'
 
 /* ─── Paleta ─────────────────────────────────────────────── */
-// canvas:   #f4dfd0  cream — fundo de página
-// cloud:    #ede0d4  cream escuro — seções alternadas
+// canvas:   #fdf6f0  cream — fundo de página
+// cloud:    #f4ece6  cream escuro — seções alternadas
 // white:    #ffffff  superfície de cards
 // teal:     #0abfc7  accent decorativo (eyebrows, bullets, stats, pills)
 // tealDeep: #089aa2  hover do teal
@@ -192,7 +192,7 @@ function SectionTitle({ children, className = '' }: { children: React.ReactNode;
 
 function Tag({ children }: { children: string }) {
   return (
-    <span className="text-[13px] font-semibold text-[#222222] bg-[#f4dfd0] border border-[#d4c4b5] px-3.5 py-1.5 rounded-full transition-colors hover:bg-[rgba(10,191,199,0.12)] hover:text-[#0abfc7] hover:border-[rgba(10,191,199,0.3)] cursor-default select-none">
+    <span className="text-[13px] font-semibold text-[#222222] bg-[#fdf6f0] border border-[#d4c4b5] px-3.5 py-1.5 rounded-full transition-colors hover:bg-[rgba(10,191,199,0.12)] hover:text-[#0abfc7] hover:border-[rgba(10,191,199,0.3)] cursor-default select-none">
       {children}
     </span>
   )
@@ -202,7 +202,7 @@ function ExpCard({ exp }: { exp: Experience }) {
   return (
     <div className="bg-white border border-[#d4c4b5] rounded-2xl p-7 shadow-[rgba(0,0,0,0.04)_0_2px_8px_0] transition-[box-shadow,border-color] hover:shadow-[rgba(0,0,0,0.08)_0_4px_16px_0] hover:border-[#b5a090]">
       <div className="flex items-start gap-4 mb-5">
-        <div className="w-12 h-12 rounded-[10px] bg-[#ede0d4] border border-[#d4c4b5] flex items-center justify-center shrink-0 font-display text-[13px] font-bold text-[#6a6a6a]">
+        <div className="w-12 h-12 rounded-[10px] bg-[#f4ece6] border border-[#d4c4b5] flex items-center justify-center shrink-0 font-display text-[13px] font-bold text-[#6a6a6a]">
           {exp.logo}
         </div>
         <div>
@@ -261,7 +261,7 @@ export default function Home() {
   return (
     <>
       {/* ── NAV ──────────────────────────────────────────── */}
-      <nav className="fixed inset-x-0 top-0 z-50 h-[72px] bg-[#f4dfd0]/90 backdrop-blur-md border-b border-[#d4c4b5]">
+      <nav className="fixed inset-x-0 top-0 z-50 h-[72px] bg-[#fdf6f0]/90 backdrop-blur-md border-b border-[#d4c4b5]">
         <div className="max-w-[1200px] mx-auto px-8 h-full flex items-center justify-between">
           <a href="#hero" className="font-display text-[18px] font-medium tracking-[-0.5px] text-[#222222] no-underline">
             Nicolle Longobardi
@@ -287,7 +287,7 @@ export default function Home() {
       </nav>
 
       {menuOpen && <div className="fixed inset-0 bg-black/30 z-[150]" onClick={() => setMenuOpen(false)} />}
-      <div className={`fixed top-0 right-0 bottom-0 w-[280px] bg-[#f4dfd0] border-l border-[#d4c4b5] z-[200] flex flex-col gap-7 px-8 pt-[88px] pb-8 transition-transform duration-300 ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`fixed top-0 right-0 bottom-0 w-[280px] bg-[#fdf6f0] border-l border-[#d4c4b5] z-[200] flex flex-col gap-7 px-8 pt-[88px] pb-8 transition-transform duration-300 ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         {navLinks.map(l => (
           <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)} className="text-lg font-medium text-[#222222] no-underline">{l.label}</a>
         ))}
@@ -295,7 +295,7 @@ export default function Home() {
       </div>
 
       {/* ── HERO ─────────────────────────────────────────── */}
-      <section id="hero" className="min-h-screen flex items-center pt-[120px] pb-20 px-8 bg-[#f4dfd0]">
+      <section id="hero" className="min-h-screen flex items-center pt-[120px] pb-20 px-8 bg-[#fdf6f0]">
         <div className="max-w-[1200px] w-full mx-auto grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-16 lg:gap-20 items-center">
           <div>
             <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.1em] text-[#0abfc7] mb-5">
@@ -355,7 +355,7 @@ export default function Home() {
       </section>
 
       {/* ── ÁREAS ────────────────────────────────────────── */}
-      <section id="areas" className="py-24 px-8 bg-[#ede0d4]">
+      <section id="areas" className="py-24 px-8 bg-[#f4ece6]">
         <div className="max-w-[1200px] mx-auto">
           <Eyebrow>Áreas de Atuação</Eyebrow>
           <SectionTitle>O que eu faço</SectionTitle>
@@ -372,7 +372,7 @@ export default function Home() {
       </section>
 
       {/* ── EXPERIÊNCIA ──────────────────────────────────── */}
-      <section id="experiencia" className="py-24 px-8 bg-[#f4dfd0]">
+      <section id="experiencia" className="py-24 px-8 bg-[#fdf6f0]">
         <div className="max-w-[1200px] mx-auto">
           <Eyebrow>Trajetória</Eyebrow>
           <SectionTitle>Experiência</SectionTitle>
@@ -383,7 +383,7 @@ export default function Home() {
       </section>
 
       {/* ── PROJETOS ─────────────────────────────────────── */}
-      <section id="projetos" className="py-24 px-8 bg-[#ede0d4]">
+      <section id="projetos" className="py-24 px-8 bg-[#f4ece6]">
         <div className="max-w-[1200px] mx-auto">
           <Eyebrow>Portfólio</Eyebrow>
           <SectionTitle>Projetos em destaque</SectionTitle>
@@ -415,13 +415,13 @@ export default function Home() {
       </section>
 
       {/* ── COMPETÊNCIAS — física interativa ─────────────── */}
-      <section id="competencias" className="pt-24 pb-16 bg-white">
+      <section id="competencias" className="pt-24 pb-16 bg-[#fdf6f0]">
         <div className="max-w-[1200px] mx-auto px-8">
           <Eyebrow>Competências</Eyebrow>
           <SectionTitle className="mb-2">Habilidades</SectionTitle>
           <p className="text-sm font-medium text-[#b5a090] mb-4">Arraste e interaja com as habilidades.</p>
 
-          <Gravity gravity={{ x: 0, y: 1.2 }} style={{ height: 320, borderRadius: 16, background: '#f4dfd0', border: '1.5px solid #d4c4b5' }}>
+          <Gravity gravity={{ x: 0, y: 1.2 }} style={{ height: 320, borderRadius: 16, background: '#ffffff', border: '1.5px solid #d4c4b5' }}>
             {skills.map((s, i) => {
               const pos = skillPos(i)
               const c = skillColorMap[s.color]
@@ -441,7 +441,7 @@ export default function Home() {
       </section>
 
       {/* ── VOLUNTARIADO & FORMAÇÃO ───────────────────────── */}
-      <section className="py-24 px-8 bg-[#ede0d4]">
+      <section className="py-24 px-8 bg-[#f4ece6]">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
             <h2 className="font-display text-[24px] font-medium tracking-[-0.5px] text-[#222222] mb-6">Voluntariado</h2>
@@ -474,7 +474,7 @@ export default function Home() {
       </section>
 
       {/* ── CONTATO ──────────────────────────────────────── */}
-      <section id="contato" className="py-24 px-8 bg-[#f4dfd0]">
+      <section id="contato" className="py-24 px-8 bg-[#fdf6f0]">
         <div className="max-w-[640px] mx-auto">
           <div className="bg-white rounded-[20px] border border-[#d4c4b5] shadow-[rgba(0,0,0,0.02)_0_0_0_1px,rgba(0,0,0,0.04)_0_2px_6px_0,rgba(0,0,0,0.10)_0_4px_8px_0] px-10 sm:px-14 py-14 text-center">
             <h2 className="font-display text-[48px] font-medium tracking-[-2px] leading-[1.05] text-[#222222] mb-3">
