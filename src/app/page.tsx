@@ -120,35 +120,44 @@ const projects = [
   { seed: '1001-historias', tag: 'Arte-Educação · 2016', title: '1001 Histórias com Arte', client: 'Spiral Criativa × Instituto JCA × Viação 1001', desc: 'Educadora no projeto itinerante de artes, cultura e literatura para crianças de escolas públicas por 12 cidades do estado do Rio de Janeiro.', stats: [{ v: '9.000+', l: 'crianças' }, { v: '280', l: 'oficinas' }, { v: '100', l: 'escolas' }] },
 ]
 
-const skills: { label: string; featured?: boolean }[] = [
-  { label: 'Produção executiva',       featured: true },
-  { label: 'Gestão de projetos',       featured: true },
-  { label: 'Planejamento estratégico', featured: true },
-  { label: 'Liderança de equipe',      featured: true },
-  { label: 'Artes cênicas',            featured: true },
-  { label: 'Produção de eventos',      featured: true },
-  { label: 'Gestão educacional' },
-  { label: 'Direção de arte' },
-  { label: 'Gestão de pessoas' },
-  { label: 'Análise de roteiros' },
-  { label: 'Decupagem' },
-  { label: 'Atendimento ao cliente' },
-  { label: 'Teatro' },
-  { label: 'Negociação' },
-  { label: 'Eventos corporativos' },
-  { label: 'Comunicação' },
-  { label: 'Liderança' },
-  { label: 'Trabalho em equipe' },
-  { label: 'Pesquisa' },
-  { label: 'Mídias sociais' },
-  { label: 'Produção televisiva' },
-  { label: 'Escrita criativa' },
-  { label: 'Produção teatral' },
-  { label: 'Coordenação educativa' },
-  { label: 'Iniciativas comunitárias' },
-  { label: 'Inglês intermediário' },
-  { label: 'Microsoft Office' },
-  { label: 'Fotografia' },
+type SkillColor = 'teal' | 'violet' | 'coral' | 'blue' | 'green' | 'rose'
+const skillColorMap: Record<SkillColor, { bg: string; border: string }> = {
+  teal:   { bg: '#0abfc7', border: '#089aa2' },
+  violet: { bg: '#7c6cf7', border: '#6457d6' },
+  coral:  { bg: '#e07b54', border: '#c0633e' },
+  blue:   { bg: '#4a8fd4', border: '#3972ae' },
+  green:  { bg: '#4aab7f', border: '#37896a' },
+  rose:   { bg: '#c4607a', border: '#a84d66' },
+}
+const skills: { label: string; color: SkillColor }[] = [
+  { label: 'Produção executiva',       color: 'teal'   },
+  { label: 'Gestão de projetos',       color: 'violet' },
+  { label: 'Planejamento estratégico', color: 'violet' },
+  { label: 'Liderança de equipe',      color: 'violet' },
+  { label: 'Artes cênicas',            color: 'coral'  },
+  { label: 'Produção de eventos',      color: 'teal'   },
+  { label: 'Gestão educacional',       color: 'green'  },
+  { label: 'Direção de arte',          color: 'coral'  },
+  { label: 'Gestão de pessoas',        color: 'violet' },
+  { label: 'Análise de roteiros',      color: 'coral'  },
+  { label: 'Decupagem',                color: 'coral'  },
+  { label: 'Atendimento ao cliente',   color: 'blue'   },
+  { label: 'Teatro',                   color: 'coral'  },
+  { label: 'Negociação',               color: 'blue'   },
+  { label: 'Eventos corporativos',     color: 'teal'   },
+  { label: 'Comunicação',              color: 'blue'   },
+  { label: 'Liderança',                color: 'violet' },
+  { label: 'Trabalho em equipe',       color: 'blue'   },
+  { label: 'Pesquisa',                 color: 'rose'   },
+  { label: 'Mídias sociais',           color: 'blue'   },
+  { label: 'Produção televisiva',      color: 'teal'   },
+  { label: 'Escrita criativa',         color: 'rose'   },
+  { label: 'Produção teatral',         color: 'coral'  },
+  { label: 'Coordenação educativa',    color: 'green'  },
+  { label: 'Iniciativas comunitárias', color: 'green'  },
+  { label: 'Inglês intermediário',     color: 'rose'   },
+  { label: 'Microsoft Office',         color: 'rose'   },
+  { label: 'Fotografia',               color: 'rose'   },
 ]
 
 function skillPos(i: number): { x: string; y: string } {
@@ -412,16 +421,16 @@ export default function Home() {
           <SectionTitle className="mb-2">Habilidades</SectionTitle>
           <p className="text-sm font-medium text-[#b5a090] mb-4">Arraste e interaja com as habilidades.</p>
 
-          <Gravity gravity={{ x: 0, y: 1.2 }} style={{ height: 320, borderRadius: 16, background: '#fdf6f0', border: '1.5px solid #d4c4b5' }}>
+          <Gravity gravity={{ x: 0, y: 1.2 }} style={{ height: 320, borderRadius: 16, background: '#f4dfd0', border: '1.5px solid #d4c4b5' }}>
             {skills.map((s, i) => {
               const pos = skillPos(i)
+              const c = skillColorMap[s.color]
               return (
                 <MatterBody key={s.label} x={pos.x} y={pos.y} matterBodyOptions={{ friction: 0.4, restitution: 0.3, frictionAir: 0.011 }}>
-                  <div className={`px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap border cursor-grab active:cursor-grabbing select-none transition-colors ${
-                    s.featured
-                      ? 'bg-[#0abfc7] text-white border-[#089aa2] hover:bg-[#089aa2]'
-                      : 'bg-white text-[#222222] border-[#d4c4b5] hover:bg-[rgba(10,191,199,0.12)] hover:text-[#0abfc7] hover:border-[rgba(10,191,199,0.3)]'
-                  }`}>
+                  <div
+                    className="px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap border cursor-grab active:cursor-grabbing select-none"
+                    style={{ background: c.bg, borderColor: c.border, color: 'white' }}
+                  >
                     {s.label}
                   </div>
                 </MatterBody>
