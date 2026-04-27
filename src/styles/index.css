@@ -4,6 +4,12 @@
 @import 'react-18-image-lightbox/src/style.css';
 @import 'react-modal-video/css/modal-video.css';
 
+#smooth-wrapper, #smooth-content {
+    overflow-x: hidden !important;
+    width: 100vw !important;
+    max-width: 100% !important;
+}
+
 @import "../../public/assets/css/animate.min.css";
 @import "../../public/assets/css/blog.css";
 @import "../../public/assets/css/font-awesome-pro.css";

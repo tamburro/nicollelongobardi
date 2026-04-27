@@ -4,7 +4,7 @@ import React from 'react'
 export default function BlogArea() {
   return (
     <>
-      <section className="blog-area">
+      <section id="stories" className="blog-area">
         <div className="container">
           <div className="row">
             <div className="col-xl-12 col-lg-12">
