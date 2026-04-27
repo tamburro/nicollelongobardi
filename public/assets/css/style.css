@@ -1239,7 +1239,8 @@ html {
 @media (min-width: 992px) {
     .hero-content h2 {
         line-height: 0.9;
-        margin-top: -15px;
+        margin-top: -30px;
+        margin-bottom: 60px;
     }
 }
 .hero-content p {
