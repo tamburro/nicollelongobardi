@@ -1236,6 +1236,12 @@ html {
     color: var(--main-color);
 }
 
+@media (min-width: 992px) {
+    .hero-content h2 {
+        line-height: 0.9;
+        margin-top: -15px;
+    }
+}
 .hero-content p {
     color: var(--main-color);
 }
