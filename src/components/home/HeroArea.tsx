@@ -9,7 +9,7 @@ export default function HeroArea() {
           <div className="row">
             <div className="col-lg-12">
               <div className="hero-content wow fadeInUp text-center delay-0-2s">
-                <h2>Nicolle Longobardi</h2>
+                <h2 style={{ lineHeight: '0.85', marginTop: '-30px', marginBottom: '20px' }}>Nicolle Longobardi</h2>
               </div>
             </div>
           </div>
