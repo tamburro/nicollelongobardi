@@ -5,6 +5,8 @@ import menu_data from './menu_data'
 import Link from 'next/link'
 
 
+import { gsap } from "gsap";
+
 export default function MobileMenu() {
 
   const [navTitle, setNavTitle] = useState("");
@@ -20,19 +22,16 @@ export default function MobileMenu() {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, target: string) => {
     if (target.startsWith('#')) {
       e.preventDefault();
-      let smoother: any;
-      if (typeof window !== 'undefined') {
-        smoother = (window as any).ScrollSmoother?.get() || (window as any).ScrollSmoother;
-        if (!smoother && (window as any).ScrollSmoother) {
-           smoother = (window as any).ScrollSmoother;
-        }
-      }
       
       const element = document.querySelector(target);
-      if (smoother && smoother.scrollTo) {
-        smoother.scrollTo(target, true, "top top");
-      } else if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+      if (element && typeof window !== 'undefined') {
+        gsap.to(window, { duration: 1, scrollTo: { y: target, offsetY: 0 }, ease: "power2.inOut" });
+        
+        // Close the mobile sidebar by clicking the close button
+        const closeBtn = document.getElementById('sidebar__close-btn');
+        if (closeBtn) {
+          closeBtn.click();
+        }
       }
     }
   }
