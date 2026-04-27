@@ -25,7 +25,12 @@ export default function MobileMenu() {
       
       const element = document.querySelector(target);
       if (element && typeof window !== 'undefined') {
-        gsap.to(window, { duration: 1, scrollTo: { y: target, offsetY: 0 }, ease: "power2.inOut" });
+        const smoother = (window as any).ScrollSmoother?.get();
+        if (smoother) {
+          smoother.scrollTo(target, true, "top top");
+        } else {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
         
         // Close the mobile sidebar by clicking the close button
         const closeBtn = document.getElementById('sidebar__close-btn');

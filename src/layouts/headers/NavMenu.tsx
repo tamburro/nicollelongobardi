@@ -11,7 +11,12 @@ export default function NavMenu() {
       e.preventDefault();
       const element = document.querySelector(target);
       if (element && typeof window !== 'undefined') {
-        gsap.to(window, { duration: 1, scrollTo: { y: target, offsetY: 0 }, ease: "power2.inOut" });
+        const smoother = (window as any).ScrollSmoother?.get();
+        if (smoother) {
+          smoother.scrollTo(target, true, "top top");
+        } else {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     }
   }
