@@ -16,8 +16,8 @@ const UseSticky = (): StickyState => {
       let scrollPos = window.scrollY;
       
       if (!smoother) {
-        if (typeof window !== 'undefined' && window.ScrollSmoother) {
-          smoother = window.ScrollSmoother.get();
+        if (typeof window !== 'undefined' && (window as any).ScrollSmoother) {
+          smoother = (window as any).ScrollSmoother.get();
         } else {
           smoother = ScrollSmoother.get();
         }
