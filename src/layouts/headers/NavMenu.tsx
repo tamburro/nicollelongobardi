@@ -13,9 +13,11 @@ export default function NavMenu() {
       if (element && typeof window !== 'undefined') {
         const smoother = (window as any).ScrollSmoother?.get();
         if (smoother) {
-          smoother.scrollTo(target, true, "top top");
+          const targetY = smoother.scrollTop() + element.getBoundingClientRect().top - 100;
+          smoother.scrollTo(targetY, true);
         } else {
-          element.scrollIntoView({ behavior: 'smooth' });
+          const targetY = window.scrollY + element.getBoundingClientRect().top - 100;
+          window.scrollTo({ top: targetY, behavior: 'smooth' });
         }
       }
     }
