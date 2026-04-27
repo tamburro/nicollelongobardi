@@ -9,7 +9,7 @@ export default function NavMenu() {
       e.preventDefault();
       let smoother: any;
       if (typeof window !== 'undefined') {
-        smoother = (window as any).ScrollSmoother?.get() || window.ScrollSmoother;
+        smoother = (window as any).ScrollSmoother?.get() || (window as any).ScrollSmoother;
         if (!smoother && (window as any).ScrollSmoother) {
            smoother = (window as any).ScrollSmoother;
         }
