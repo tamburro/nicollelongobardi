@@ -29,7 +29,7 @@ const UseSticky = (): StickyState => {
         scrollPos = window.scrollY;
       }
 
-      if (scrollPos > 200) {
+      if (scrollPos > 10) {
         setSticky(true);
       } else {
         setSticky(false);

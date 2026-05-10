@@ -4,18 +4,17 @@ import React from 'react'
 export default function TestimonoalArea() {
   return (
     <>
-      <section className="testimonials-area">
+      <section id="experience" className="testimonials-area">
         <div className="container">
           <div className="row">
             <div className="col-xl-12 col-lg-12">
               <div className="section-title section-black-title wow fadeInUp delay-0-2s">
-                <h2>Experiências em Destaque</h2>
+                <h2>Experiência</h2>
               </div>
             </div>
           </div>
           <div className="row">
             <div className="col-lg-6 col-md-6">
-
               <div className="testimonial-item wow fadeInUp delay-0-2s">
                 <div className="author">
                   <img src="https://picsum.photos/seed/embratel-exp/80/80" alt="Embratel" />
@@ -28,10 +27,9 @@ export default function TestimonoalArea() {
                   <span>Gestão de Eventos · Set 2023 – Dez 2024</span>
                 </div>
               </div>
-
             </div>
-            <div className="col-lg-6 col-md-6">
 
+            <div className="col-lg-6 col-md-6">
               <div className="testimonial-item wow fadeInUp delay-0-4s">
                 <div className="author">
                   <img src="https://picsum.photos/seed/dlive-exp/80/80" alt="D+Live" />
@@ -44,43 +42,25 @@ export default function TestimonoalArea() {
                   <span>Produção de Eventos · Set 2022 – Fev 2024</span>
                 </div>
               </div>
-
             </div>
-            <div className="col-lg-4 col-md-6">
 
+            <div className="col-lg-4 col-md-6">
               <div className="testimonial-item wow fadeInUp delay-0-6s">
-                <div className="author">
-                  <img src="https://picsum.photos/seed/ayika-exp/80/80" alt="Instituto Ayíka" />
-                </div>
-                <div className="text">
-                  Gestão de projetos educativos ambientais com foco em juventude, raça, clima, gênero e território. Elaboração de projetos para editais públicos e privados.
-                </div>
-                <div className="testi-des">
-                  <h5>Instituto Ayíka</h5>
-                  <span>Gestão de Projetos · Ago 2021 – Ago 2022</span>
-                </div>
-              </div>
-
-            </div>
-            <div className="col-lg-4 col-md-6">
-
-              <div className="testimonial-item wow fadeInUp delay-0-8s">
                 <div className="author">
                   <img src="https://picsum.photos/seed/multirio-exp/80/80" alt="MultiRio" />
                 </div>
                 <div className="text">
-                  Roteiro, decupagem, produção executiva e planejamento estratégico de projetos educacionais para TV municipal.
+                  Roteiro, decupagem, produção executiva e planejamento estratégico de projetos educacionais para TV municipal. Controller em produções audiovisuais independentes.
                 </div>
                 <div className="testi-des">
                   <h5>MultiRio</h5>
-                  <span>Estagiário de Produção · Ago 2019 – Jan 2021</span>
+                  <span>Produção Audiovisual · Ago 2019 – Jan 2021</span>
                 </div>
               </div>
-
             </div>
-            <div className="col-lg-4 col-md-6">
 
-              <div className="testimonial-item wow fadeInUp delay-0-9s">
+            <div className="col-lg-4 col-md-6">
+              <div className="testimonial-item wow fadeInUp delay-0-8s">
                 <div className="author">
                   <img src="https://picsum.photos/seed/munde-exp/80/80" alt="Coletivo Mundé" />
                 </div>
@@ -92,8 +72,38 @@ export default function TestimonoalArea() {
                   <span>Coordenadora & Atriz · Jan 2014 – Dez 2020</span>
                 </div>
               </div>
-
             </div>
+
+            <div className="col-lg-4 col-md-6">
+              <div className="testimonial-item wow fadeInUp delay-0-9s">
+                <div className="author">
+                  <img src="https://picsum.photos/seed/unlimited-exp/80/80" alt="Unlimited Ideas" />
+                </div>
+                <div className="text">
+                  Produção de eventos corporativos e de moda para o Grupo Soma: BlackFriday, Soma Friday, CarnaSOMA, Joga Junto Farm, Workshops e Showrooms para Hering, Havaianas e Cantão.
+                </div>
+                <div className="testi-des">
+                  <h5>Unlimited Ideas</h5>
+                  <span>Produção de Eventos · 2022 – atual</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-lg-6 col-md-6">
+              <div className="testimonial-item wow fadeInUp delay-0-9s">
+                <div className="author">
+                  <img src="https://picsum.photos/seed/ayika-exp/80/80" alt="Instituto Ayíka" />
+                </div>
+                <div className="text">
+                  Gestão de projetos educativos ambientais com foco em juventude, raça, clima, gênero e território. Elaboração de projetos para editais públicos e privados no terceiro setor. Mobilização de recursos e monitoramento de indicadores sociais.
+                </div>
+                <div className="testi-des">
+                  <h5>Instituto Ayíka</h5>
+                  <span>Gestão de Projetos · Ago 2021 – Ago 2022</span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

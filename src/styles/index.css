@@ -19,4 +19,172 @@
 @import "~bootstrap/dist/css/bootstrap";
 @import "../../public/assets/css/spacing.css";
 @import "../../public/assets/css/style.css";
-@import "../../public/assets/css/responsive.css"; 
+@import "../../public/assets/css/responsive.css";
+
+/* ══════════════════════════════════════════
+   NOITE CULTURAL — design system
+   Fundo: #0e0e0e  Texto: #f0ebe3  Acento: #C8F23C
+   ══════════════════════════════════════════ */
+:root {
+    --body-background:  #0e0e0e;
+    --main-color:       #C8F23C;
+    --black-color:      #0e0e0e;
+    --heading-color:    #f0ebe3;
+    --primary-color:    #141414;
+    --lighter-color:    #1a1a1a;
+    --body-color:       rgba(240, 235, 227, 0.65);
+    --border-color:     rgba(240, 235, 227, 0.08);
+    --button-border:    rgba(240, 235, 227, 0.2);
+    --tp-theme-1:       #C8F23C;
+}
+
+body {
+    background: #0e0e0e !important;
+    color: #f0ebe3 !important;
+}
+
+/* Texto geral e parágrafos */
+p { color: rgba(240, 235, 227, 0.7); }
+
+/* Corrigir cinzas hardcoded que perdem contraste no fundo escuro */
+.service-item h5,
+.service-item p,
+.about-content-part p,
+.single-contact p,
+.single-contact a,
+.testi-des span,
+.counter-title,
+.copy-left-text,
+.copy-right-text,
+h2.about-pre-title {
+    color: rgba(240, 235, 227, 0.65) !important;
+}
+
+.service-item h5 {
+    border-color: rgba(240, 235, 227, 0.25) !important;
+}
+
+/* Headings e números de contadores */
+h1, h2, h3, h4, h5, h6 { color: #f0ebe3; }
+.hero-counter-area .count-text { color: #C8F23C !important; }
+.hero-counter-area .counter-title { color: rgba(240, 235, 227, 0.55) !important; }
+
+/* Títulos de seção */
+.section-title h2,
+.section-black-title h2 { color: #C8F23C !important; }
+
+/* Label "Sobre Mim" */
+h2.about-pre-title { color: #C8F23C !important; }
+
+/* Testimonial cards */
+.testimonial-item {
+    background: #1a1a1a !important;
+    border-color: rgba(240, 235, 227, 0.08) !important;
+}
+.testimonial-item .text { color: rgba(240, 235, 227, 0.7) !important; }
+.testimonial-item .testi-des h5 { color: #C8F23C !important; }
+
+/* Service items */
+.service-item { background: transparent !important; }
+.service-item h4 { color: #C8F23C !important; }
+.service-item i { color: #C8F23C !important; }
+
+/* Hero content */
+.hero-content p,
+.hero-content span { color: rgba(240, 235, 227, 0.75) !important; }
+
+/* ── Seção de contato ── */
+.contact-area {
+    background: #0e0e0e !important;
+}
+.contact-content-part,
+.contact-form-area {
+    background: #161616 !important;
+    border-color: rgba(240, 235, 227, 0.1) !important;
+}
+
+/* Inputs e textareas */
+.contact-form-area .form-group .form-control {
+    background: #1e1e1e !important;
+    border-color: rgba(240, 235, 227, 0.15) !important;
+    color: #f0ebe3 !important;
+}
+.contact-form-area .form-group .form-control:focus {
+    border-color: #C8F23C !important;
+}
+input::placeholder,
+textarea::placeholder,
+.form-control::placeholder { color: rgba(240, 235, 227, 0.3) !important; opacity: 1 !important; }
+
+/* Labels do formulário */
+.contact-form-area .form-group label { color: #C8F23C !important; }
+
+/* Ícone dentro do input */
+.contact-form-area .form-group .for-icon { color: rgba(240, 235, 227, 0.3) !important; }
+
+/* Dados de contato (p já sobrescrito, mas single-contact p é hardcoded) */
+.single-contact p,
+.single-contact a { color: rgba(240, 235, 227, 0.7) !important; }
+.single-contact h2 { color: #C8F23C !important; }
+
+/* Ícones de circle-btn */
+.circle-btn {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+.circle-btn i { color: #C8F23C !important; }
+
+/* Ícones sociais */
+.about-social ul li a {
+    border: none !important;
+    background: none !important;
+    padding: 0 !important;
+    color: #C8F23C !important;
+}
+.about-social ul li a:hover {
+    color: #fff !important;
+}
+
+/* Número do service-item: preto no hover (fundo lime) */
+.service-item:hover .service-item h5,
+.service-item:hover h5 {
+    color: #0e0e0e !important;
+    background: #C8F23C !important;
+    border-color: #C8F23C !important;
+}
+
+/* Botão principal */
+.theme-btn {
+    background: #C8F23C !important;
+    color: #0e0e0e !important;
+    border-color: #C8F23C !important;
+}
+.theme-btn:hover {
+    background: transparent !important;
+    color: #C8F23C !important;
+    border-color: #C8F23C !important;
+}
+
+/* Links e destaques */
+a { color: inherit; }
+a:hover { color: #C8F23C; }
+
+/* Scroll-to-top */
+.scroll-top { background: #C8F23C !important; color: #0e0e0e !important; }
+
+/* ── Header glassmorphism ── */
+.main-header .header-upper {
+    background: transparent !important;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: none;
+}
+
+.fixed-header .header-upper {
+    background: rgba(10, 10, 10, 0.82) !important;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}

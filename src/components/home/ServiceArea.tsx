@@ -9,7 +9,7 @@ export default function ServiceArea() {
           <div className="row">
             <div className="col-xl-12 col-lg-12">
               <div className="section-title section-black-title wow fadeInUp delay-0-2s">
-                <h2>Competências</h2>
+                <h2>Serviços</h2>
               </div>
             </div>
           </div>
@@ -19,8 +19,8 @@ export default function ServiceArea() {
               <div className="service-item wow fadeInUp delay-0-2s">
                 <i className="ri-arrow-right-up-line"></i>
                 <h5>01</h5>
-                <h4>Produção Cultural & Eventos</h4>
-                <p>Gestão end-to-end de eventos corporativos e culturais: briefings, cronogramas, logística, orçamentos e relatórios de fechamento. Projetos para Grupo Soma, Hering, Animale, OAB e outros.</p>
+                <h4>Produção de Eventos Corporativos</h4>
+                <p>Gestão end-to-end: briefings, cronogramas, logística, orçamentos, KPIs e relatórios. Projetos para Grupo Soma, Farm, Hering, Havaianas, OAB e Petrobras.</p>
               </div>
             </div>
 
@@ -28,17 +28,17 @@ export default function ServiceArea() {
               <div className="service-item wow fadeInUp delay-0-4s">
                 <i className="ri-arrow-right-up-line"></i>
                 <h5>02</h5>
-                <h4>Gestão de Projetos</h4>
-                <p>Planejamento estratégico, monitoramento e mobilização de recursos em empresas e no terceiro setor.</p>
+                <h4>Gestão de Projetos & Terceiro Setor</h4>
+                <p>Planejamento estratégico, monitoramento e mobilização de recursos em empresas e no terceiro setor. Instituto Ayíka, Coletivo Mundé.</p>
               </div>
             </div>
 
             <div className="col-lg-4 col-md-5">
-              <div className="service-item wow fadeInUp delay-0-6s">
+              <div className="service-item wow fadeInUp delay-0-6s" style={{ opacity: 0.85 }}>
                 <i className="ri-arrow-right-up-line"></i>
                 <h5>03</h5>
-                <h4>Educação & Artes Cênicas</h4>
-                <p>Criação de oficinas teatrais, coordenação pedagógica, programas educacionais e artista-docente em comunidades.</p>
+                <h4>Produção Audiovisual & Controller</h4>
+                <p>Controller em longas-metragens, produção e gestão de gravações externas e em estúdio, roteiro e decupagem. MultiRio, produções independentes.</p>
               </div>
             </div>
 
@@ -50,6 +50,7 @@ export default function ServiceArea() {
                 <p>Elaboração, concepção e submissão de projetos culturais e esportivos para editais públicos, Lei Rouanet e demais leis de incentivo à cultura.</p>
               </div>
             </div>
+
 
           </div>
         </div>
